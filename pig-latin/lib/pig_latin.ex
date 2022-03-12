@@ -11,8 +11,6 @@ defmodule PigLatin do
     |> Enum.join(" ")
   end
 
-  ### Haven't solved, probably will start over ###
-
   defp rules([start, vowel, rest]) do
     cond do
       String.match?(start, ~r'q$') and vowel == "u" ->
@@ -31,7 +29,7 @@ defmodule PigLatin do
       vowel == "y" and String.match?(rest, ~r'^[aeiou]') ->
         rest <> vowel <> "ay"
 
-      # vowel and rest get switched up in this case
+      # Vowel and rest get switched up in this case
       rest == "y" and String.length(vowel) == 1 ->
         rest <> vowel <> "ay"
 
